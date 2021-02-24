@@ -1,5 +1,3 @@
-/*	23.02.2021	*/
-
 "use strict";
 
 function _defineProperty(obj, key, value) {
@@ -15,6 +13,8 @@ function _defineProperty(obj, key, value) {
   }
   return obj;
 }
+
+/*	23.02.2021	*/
 
 /*	*	*	*	*	*	*	*	*	*	*/
 
@@ -156,25 +156,46 @@ class enehty_gelColorParser {
         return 0;
       }
 
+      this.box = this.elem.parentElement;
+      this.box.classList.add("__enehty_gelSpecial");
       this.list = this.elem.querySelector("ul");
       this.elems = [...this.list.querySelectorAll("li")];
       this.elems.forEach((elem) => this.addPropperClass(elem));
     });
 
     _defineProperty(this, "addPropperClass", (elem) => {
+      const title = elem.querySelector("a").getAttribute("title");
       const color = enehty_gelColorData.filter(
-        (e) => elem.textContent.indexOf(e.name) !== -1
+        (e) => title.indexOf(e.name) !== -1
       );
 
       if (color.length > 1) {
         throw new Error("multiple colors to one element");
       }
 
-      elem.classList.add(`__${color[0].hex.replace("#", "")}`);
+      elem
+        .querySelector("a")
+        .classList.add(`__${color[0].hex.replace("#", "")}`);
+    });
+
+    _defineProperty(this, "toggleSmall", () => {
+      this.list.classList.remove("__colors");
+      this.list.style.display = "none";
+      this.elem.style.display = "block";
+      this.elem.append(this.list);
+    });
+
+    _defineProperty(this, "toggleLarge", () => {
+      this.list.classList.add("__colors");
+      this.list.style.display = "flex";
+      this.elem.style.display = "none";
+      this.box.prepend(this.list);
     });
 
     this.selector = selector;
+    this.box = null;
     this.elem = null;
+    this.elems = [];
     this.list = null;
     this.setUp();
   }
@@ -184,4 +205,17 @@ class enehty_gelColorParser {
 
 document.addEventListener("DOMContentLoaded", () => {
   const enehty_parsed = new enehty_gelColorParser("#filter_attribute_14");
+  const media_change = window.matchMedia("(min-width: 992px)");
+
+  if (media_change.matches) {
+    enehty_parsed.toggleLarge();
+  }
+
+  media_change.addEventListener("change", (e) => {
+    if (e.matches) {
+      enehty_parsed.toggleLarge();
+    } else {
+      enehty_parsed.toggleSmall();
+    }
+  });
 });

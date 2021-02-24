@@ -11,7 +11,9 @@ class enehty_gelColorParser {
 
         this.selector = selector;
 
+        this.box = null;
         this.elem = null;
+        this.elems = [];
         this.list = null;
 
         this.setUp();
@@ -21,6 +23,9 @@ class enehty_gelColorParser {
         this.elem = document.querySelector(this.selector);
         if(!Boolean(this.elem)) {return 0;}
 
+        this.box = this.elem.parentElement;
+        this.box.classList.add('__enehty_gelSpecial');
+
         this.list = this.elem.querySelector('ul');
         this.elems = [...this.list.querySelectorAll('li')];
 
@@ -28,10 +33,28 @@ class enehty_gelColorParser {
     }
 
     addPropperClass = elem => {
-        const color = enehty_gelColorData.filter(e => elem.textContent.indexOf(e.name) !== -1);
+        const title = elem.querySelector('a').getAttribute('title');
+        const color = enehty_gelColorData.filter(e => title.indexOf(e.name) !== -1);
         if(color.length > 1) {throw new Error('multiple colors to one element')}
 
-        elem.classList.add(`__${color[0].hex.replace('#', '')}`);
+        elem.querySelector('a').classList.add(`__${color[0].hex.replace('#', '')}`);
+    }
+
+    toggleSmall = () => {
+        this.list.classList.remove('__colors');
+        this.list.style.display = 'none';
+
+        this.elem.style.display = 'block';
+        this.elem.append(this.list);
+    }
+
+    toggleLarge = () => {
+        this.list.classList.add('__colors');
+        this.list.style.display = 'flex';
+        
+
+        this.elem.style.display = 'none';
+        this.box.prepend(this.list);
     }
 }
 
@@ -40,4 +63,12 @@ class enehty_gelColorParser {
 document.addEventListener('DOMContentLoaded', () => {
 
     const enehty_parsed = new enehty_gelColorParser('#filter_attribute_14');
+
+    const media_change = window.matchMedia('(min-width: 992px)');
+        if(media_change.matches)   {enehty_parsed.toggleLarge()}
+
+    media_change.addEventListener('change', e => {
+        if(e.matches)   {enehty_parsed.toggleLarge()}
+        else            {enehty_parsed.toggleSmall()}
+    });
 });
