@@ -40,5 +40,4 @@ class enehty_gelColorParser {
 document.addEventListener('DOMContentLoaded', () => {
 
     const enehty_parsed = new enehty_gelColorParser('#filter_attribute_14');
-    console.log('dupa');
 });
