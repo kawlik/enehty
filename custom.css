@@ -15,16 +15,36 @@
     
     padding: 7px;
     border-radius: 3px;
-    background: transparent;
 }
 
-.innerbox #filter_attribute_14 li.__ffffff::before { background: '#ffffff'; }
-.innerbox #filter_attribute_14 li.__dedede::before { background: '#dedede'; }
-.innerbox #filter_attribute_14 li.__ababab::before { background: '#ababab'; }
-.innerbox #filter_attribute_14 li.__000000::before { background: '#000000'; }
-.innerbox #filter_attribute_14 li.__0c144f::before { background: '#0c144f'; }
-.innerbox #filter_attribute_14 li.__044d15::before { background: '#044d15'; }
-.innerbox #filter_attribute_14 li.__1b6b84::before { background: '#1b6b84'; }
-.innerbox #filter_attribute_14 li.__2e95da::before { background: '#2e95da'; }
-.innerbox #filter_attribute_14 li.__a6dce8::before { background: '#a6dce8'; }
-.innerbox #filter_attribute_14 li.__48d1bc::before { background: '#48d1bc'; }
+.innerbox #filter_attribute_14 li.__ffffff::before { border: 1px solid #e0e0e0; }
+.innerbox #filter_attribute_14 li.__dedede::before { background-color: #dedede; }
+.innerbox #filter_attribute_14 li.__ababab::before { background-color: #ababab; }
+.innerbox #filter_attribute_14 li.__000000::before { background-color: #000000; }
+.innerbox #filter_attribute_14 li.__0c144f::before { background-color: #0c144f; }
+.innerbox #filter_attribute_14 li.__044d15::before { background-color: #044d15; }
+.innerbox #filter_attribute_14 li.__1b6b84::before { background-color: #1b6b84; }
+.innerbox #filter_attribute_14 li.__2e95da::before { background-color: #2e95da; }
+.innerbox #filter_attribute_14 li.__a6dce8::before { background-color: #a6dce8; }
+.innerbox #filter_attribute_14 li.__48d1bc::before { background-color: #48d1bc; }
+.innerbox #filter_attribute_14 li.__aae8d1::before { background-color: #aae8d1; }
+.innerbox #filter_attribute_14 li.__fbbdd6::before { background-color: #fbbdd6; }
+.innerbox #filter_attribute_14 li.__c1b5d4::before { background-color: #c1b5d4; }
+.innerbox #filter_attribute_14 li.__9d7ad0::before { background-color: #9d7ad0; }
+.innerbox #filter_attribute_14 li.__c8328c::before { background-color: #c8328c; }
+.innerbox #filter_attribute_14 li.__612d6b::before { background-color: #612d6b; }
+.innerbox #filter_attribute_14 li.__44083c::before { background-color: #44083c; }
+.innerbox #filter_attribute_14 li.__4a1400::before { background-color: #4a1400; }
+.innerbox #filter_attribute_14 li.__730933::before { background-color: #730933; }
+.innerbox #filter_attribute_14 li.__9f070e::before { background-color: #9f070e; }
+.innerbox #filter_attribute_14 li.__b80348::before { background-color: #b80348; }
+.innerbox #filter_attribute_14 li.__db1832::before { background-color: #db1832; }
+.innerbox #filter_attribute_14 li.__f66767::before { background-color: #f66767; }
+.innerbox #filter_attribute_14 li.__ed9962::before { background-color: #ed9962; }
+.innerbox #filter_attribute_14 li.__f4a8a8::before { background-color: #f4a8a8; }
+.innerbox #filter_attribute_14 li.__f4d7c9::before { background-color: #f4d7c9; }
+.innerbox #filter_attribute_14 li.__c39983::before { background-color: #c39983; }
+.innerbox #filter_attribute_14 li.__9d8f3d::before { background-color: #9d8f3d; }
+.innerbox #filter_attribute_14 li.__c7a365::before { background-color: #c7a365; }
+.innerbox #filter_attribute_14 li.__d9c162::before { background-color: #d9c162; }
+.innerbox #filter_attribute_14 li.__f4ff5e::before { background-color: #f4ff5e; }
