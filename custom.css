@@ -1,0 +1,30 @@
+/*	23.02.2021	*/
+/*	*	*	*	*	*	*	*	*	*	*/
+
+.innerbox #filter_attribute_14 li {
+    position: relative;
+}
+  
+.innerbox #filter_attribute_14 li::before {
+    content: "";  
+    position: absolute;
+    top: 50%;
+    left: 0;
+    
+    transform: translateX(-100%) translateY(-50%);
+    
+    padding: 7px;
+    border-radius: 3px;
+    background: transparent;
+}
+
+.innerbox #filter_attribute_14 li.__ffffff::before { background: '#ffffff'; }
+.innerbox #filter_attribute_14 li.__dedede::before { background: '#dedede'; }
+.innerbox #filter_attribute_14 li.__ababab::before { background: '#ababab'; }
+.innerbox #filter_attribute_14 li.__000000::before { background: '#000000'; }
+.innerbox #filter_attribute_14 li.__0c144f::before { background: '#0c144f'; }
+.innerbox #filter_attribute_14 li.__044d15::before { background: '#044d15'; }
+.innerbox #filter_attribute_14 li.__1b6b84::before { background: '#1b6b84'; }
+.innerbox #filter_attribute_14 li.__2e95da::before { background: '#2e95da'; }
+.innerbox #filter_attribute_14 li.__a6dce8::before { background: '#a6dce8'; }
+.innerbox #filter_attribute_14 li.__48d1bc::before { background: '#48d1bc'; }
