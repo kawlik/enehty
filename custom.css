@@ -1,7 +1,9 @@
 /*	23.02.2021	*/
 /*	*	*	*	*	*	*	*	*	*	*/
 
-.__enehty_gelSpecial li {position: relative;}
+.__enehty_gelSpecial li {
+    position: relative;
+}
 
 
 .__enehty_gelSpecial li a {position: relative;}
@@ -30,23 +32,26 @@
     align-items: center;
 }
 
-.__enehty_gelSpecial .__colors {
-    margin: 5px;
-    padding: 0;
-}
-
 .__enehty_gelSpecial .__colors li {
     margin: 5px;
     padding: 0;
 }
 
 .__enehty_gelSpecial .__colors a {
+    border-radius: 3px;
+    transition: all ease-in-out 0.2s;
     display: block;
-
+    
     font-size: 0;
     height: 26px;
     width: 48px;
 }
+
+.__enehty_gelSpecial .__colors a:hover {
+    box-shadow: 0 7px 12px -5px #222222;
+    transform: translateY(-5px) scale(1.02);
+}
+
 
 .__enehty_gelSpecial .__colors .selected a::before {
     opacity: 0.4; 
@@ -66,7 +71,7 @@
 }
 
 
-.__enehty_gelSpecial a.__ffffff::before { border: 1px solid #e0e0e0; }
+.__enehty_gelSpecial a.__ffffff::before { background-color: #ffffff; border: 1px solid #e0e0e0; }
 .__enehty_gelSpecial a.__dedede::before { background-color: #dedede; }
 .__enehty_gelSpecial a.__ababab::before { background-color: #ababab; }
 .__enehty_gelSpecial a.__000000::before { background-color: #000000; }

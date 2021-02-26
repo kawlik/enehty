@@ -17,7 +17,6 @@ function _defineProperty(obj, key, value) {
 /*	23.02.2021	*/
 
 /*	*	*	*	*	*	*	*	*	*	*/
-
 const enehty_gelColorData = [
   {
     name: "Bílý",
@@ -144,7 +143,6 @@ const enehty_gelColorData = [
     hex: "#f4ff5e"
   }
 ];
-
 /*	*	*	*	*	*	*	*	*	*	*/
 
 class enehty_gelColorParser {
@@ -157,7 +155,11 @@ class enehty_gelColorParser {
       }
 
       this.box = this.elem.parentElement;
-      this.box.classList.add("__enehty_gelSpecial");
+      this.box.classList.add("__enehty_gelSpecial"); //  Removal of the troublesome element
+
+      this.showMore = this.elem.querySelector(".showmore");
+      this.showMore.remove();
+      this.showMore = null;
       this.list = this.elem.querySelector("ul");
       this.elems = [...this.list.querySelectorAll("li")];
       this.elems.forEach((elem) => this.addPropperClass(elem));
@@ -197,11 +199,25 @@ class enehty_gelColorParser {
     this.elem = null;
     this.elems = [];
     this.list = null;
+    this.showMore = null;
     this.setUp();
   }
 }
-
 /*	*	*	*	*	*	*	*	*	*	*/
+
+/**
+const enehty_parsed = new enehty_gelColorParser('#filter_attribute_14');
+
+    const media_change = window.matchMedia('(min-width: 992px)');
+        if(media_change.matches)   {enehty_parsed.toggleLarge()}
+
+    media_change.addEventListener('change', e => {
+        if(e.matches)   {enehty_parsed.toggleLarge()}
+        else            {enehty_parsed.toggleSmall()}
+    });
+
+/**
+/**/
 
 document.addEventListener("DOMContentLoaded", () => {
   const enehty_parsed = new enehty_gelColorParser("#filter_attribute_14");
@@ -219,3 +235,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+/**/

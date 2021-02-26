@@ -16,6 +16,8 @@ class enehty_gelColorParser {
         this.elems = [];
         this.list = null;
 
+        this.showMore = null;
+
         this.setUp();
     }
 
@@ -25,6 +27,11 @@ class enehty_gelColorParser {
 
         this.box = this.elem.parentElement;
         this.box.classList.add('__enehty_gelSpecial');
+
+        //  Removal of the troublesome element
+        this.showMore = this.elem.querySelector('.showmore');
+        this.showMore.remove();
+        this.showMore = null;
 
         this.list = this.elem.querySelector('ul');
         this.elems = [...this.list.querySelectorAll('li')];
@@ -59,7 +66,19 @@ class enehty_gelColorParser {
 }
 
 /*	*	*	*	*	*	*	*	*	*	*/
+/**
+const enehty_parsed = new enehty_gelColorParser('#filter_attribute_14');
 
+    const media_change = window.matchMedia('(min-width: 992px)');
+        if(media_change.matches)   {enehty_parsed.toggleLarge()}
+
+    media_change.addEventListener('change', e => {
+        if(e.matches)   {enehty_parsed.toggleLarge()}
+        else            {enehty_parsed.toggleSmall()}
+    });
+
+/**
+/**/
 document.addEventListener('DOMContentLoaded', () => {
 
     const enehty_parsed = new enehty_gelColorParser('#filter_attribute_14');
@@ -72,3 +91,4 @@ document.addEventListener('DOMContentLoaded', () => {
         else            {enehty_parsed.toggleSmall()}
     });
 });
+/**/
