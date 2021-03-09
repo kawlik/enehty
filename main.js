@@ -30,8 +30,10 @@ class enehty_gelColorParser {
 
         //  Removal of the troublesome element
         this.showMore = this.elem.querySelector('.showmore');
-        this.showMore.remove();
-        this.showMore = null;
+        if(this.showMore) {
+            this.showMore.remove();
+            this.showMore = null;
+        }
 
         this.list = this.elem.querySelector('ul');
         this.elems = [...this.list.querySelectorAll('li')];
@@ -77,7 +79,7 @@ const enehty_parsed = new enehty_gelColorParser('#filter_attribute_14');
         else            {enehty_parsed.toggleSmall()}
     });
 
-/**
+**/
 /**/
 document.addEventListener('DOMContentLoaded', () => {
 
